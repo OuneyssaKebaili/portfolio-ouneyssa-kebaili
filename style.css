@@ -1,0 +1,85 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+/* Sections */
+section {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #222;
+}
+
+/* Projets */
+.project {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #333;
+  }
+  nav a {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
