@@ -1,16 +1,15 @@
-/* Variables */
 :root {
-  --primary: #4CAF50;
-  --secondary: #2196F3;
-  --dark: #222;
-  --light: #f9f9f9;
+  --primary: #1a237e;   /* bleu nuit */
+  --accent: #fbc02d;    /* doré */
+  --light: #f5f5f5;
+  --dark: #212121;
 }
 
 /* Global */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
+  background: var(--light);
   color: var(--dark);
 }
 
@@ -21,24 +20,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
 }
 
 header .logo {
   font-size: 1.5em;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: border-bottom 0.3s;
 }
 
 nav a:hover {
-  color: var(--secondary);
+  border-bottom: 2px solid var(--accent);
 }
 
 .menu-toggle {
@@ -64,15 +66,16 @@ nav a:hover {
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
-  background: var(--secondary);
+  background: var(--primary);
   color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .cta a:hover {
-  background: var(--primary);
+  background: var(--accent);
+  color: var(--dark);
 }
 
 /* Sections */
@@ -89,43 +92,46 @@ h1, h2, h3 {
 /* Projets */
 .project {
   background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s, border 0.3s;
 }
 
 .project:hover {
   transform: translateY(-5px);
+  border: 1px solid var(--accent);
 }
 
 .project img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 15px;
 }
 
 .project a {
   display: inline-block;
-  padding: 8px 15px;
-  background: var(--secondary);
+  padding: 8px 18px;
+  background: var(--primary);
   color: white;
-  border-radius: 5px;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .project a:hover {
-  background: var(--primary);
+  background: var(--accent);
+  color: var(--dark);
 }
 
 /* Footer */
 footer {
-  background: var(--dark);
-  color: white;
+  background: var(--primary);
+  color: #ddd;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  font-size: 0.9em;
 }
 
 /* Responsive */
@@ -133,11 +139,11 @@ footer {
   nav {
     display: none;
     flex-direction: column;
-    background: #333;
+    background: var(--primary);
   }
   nav a {
-    padding: 10px;
-    border-top: 1px solid #444;
+    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
   .menu-toggle {
     display: block;
