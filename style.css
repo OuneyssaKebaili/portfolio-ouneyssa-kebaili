@@ -11,6 +11,7 @@ body {
   margin: 0;
   background: var(--light);
   color: var(--dark);
+  line-height: 1.6;
 }
 
 /* Header */
@@ -23,12 +24,18 @@ header {
   padding: 15px 30px;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 header .logo {
   font-size: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -48,24 +55,35 @@ nav a:hover {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  cursor: pointer;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .hero h1 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cta {
+  margin-top: 25px;
 }
 
 .cta a {
   display: inline-block;
   margin: 10px;
-  padding: 10px 20px;
+  padding: 12px 22px;
   background: var(--primary);
   color: white;
   border-radius: 6px;
@@ -80,13 +98,21 @@ nav a:hover {
 
 /* Sections */
 section {
-  padding: 40px;
-  max-width: 900px;
+  padding: 50px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--dark);
+}
+
+h2 {
+  margin-bottom: 25px;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
 }
 
 /* Projets */
@@ -94,8 +120,8 @@ h1, h2, h3 {
   background: white;
   padding: 25px;
   margin-bottom: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, border 0.3s;
 }
 
@@ -110,19 +136,64 @@ h1, h2, h3 {
   margin-bottom: 15px;
 }
 
-.project a {
-  display: inline-block;
-  padding: 8px 18px;
-  background: var(--primary);
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+.project h3 {
+  margin-top: 0;
 }
 
-.project a:hover {
+.project p {
+  margin-bottom: 10px;
+}
+
+/* Bouton GitHub / Projet */
+.project a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Bouton téléchargement */
+.btn-download {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-download:hover {
   background: var(--accent);
   color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* Diplômes */
+#diplomas ul,
+#competences ul {
+  padding-left: 20px;
+}
+
+#diplomas li,
+#competences li {
+  margin-bottom: 10px;
+}
+
+/* Contact */
+#contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#contact a:hover {
+  color: var(--accent);
 }
 
 /* Footer */
@@ -130,22 +201,48 @@ footer {
   background: var(--primary);
   color: #ddd;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   font-size: 0.9em;
+  margin-top: 40px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
   nav {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
     background: var(--primary);
   }
-  nav a {
-    padding: 12px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+
+  nav.active {
+    display: flex;
   }
+
+  nav a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 0;
+    text-align: center;
+  }
+
   .menu-toggle {
     display: block;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  section {
+    padding: 30px 15px;
   }
 }
